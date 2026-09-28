@@ -1,0 +1,131 @@
+{
+  "info": {
+    "name": "Portfolio Backend API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://127.0.0.1:8000" },
+    { "key": "adminToken", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "Public",
+      "item": [
+        { "name": "Site Configurations", "request": { "method": "POST", "url": "{{baseUrl}}/api/v1/site/configurations" } },
+        { "name": "Themes", "request": { "method": "POST", "url": "{{baseUrl}}/api/v1/site/configurations/get/themes" } },
+        { "name": "Social Icons", "request": { "method": "POST", "url": "{{baseUrl}}/api/v1/ui/social-icons" } },
+        { "name": "Icons", "request": { "method": "POST", "url": "{{baseUrl}}/api/v1/ui/icons" } },
+        { "name": "Home Meta", "request": { "method": "POST", "url": "{{baseUrl}}/api/v1/home/meta" } },
+        { "name": "About", "request": { "method": "POST", "url": "{{baseUrl}}/api/v1/about" } },
+        { "name": "Services", "request": { "method": "POST", "url": "{{baseUrl}}/api/v1/services" } },
+        { "name": "Projects", "request": { "method": "POST", "url": "{{baseUrl}}/api/v1/projects" } },
+        { "name": "Skills", "request": { "method": "POST", "url": "{{baseUrl}}/api/v1/skills" } },
+        { "name": "Skills CV Download", "request": { "method": "GET", "url": "{{baseUrl}}/api/v1/skills/cv/download" } },
+        { "name": "Blog", "request": { "method": "POST", "url": "{{baseUrl}}/api/v1/blog" } },
+        { "name": "Blog Article", "request": { "method": "POST", "url": "{{baseUrl}}/api/v1/blog/article/{{slug}}" } },
+        { "name": "Blog Subscribe", "request": { "method": "POST", "url": "{{baseUrl}}/api/v1/blog/subscribe" } },
+        { "name": "Blog Unsubscribe (POST)", "request": { "method": "POST", "url": "{{baseUrl}}/api/v1/blog/unsubscribe" } },
+        { "name": "Blog Unsubscribe (GET)", "request": { "method": "GET", "url": "{{baseUrl}}/api/v1/blog/unsubscribe?email={{email}}" } },
+        { "name": "FAQ", "request": { "method": "POST", "url": "{{baseUrl}}/api/v1/faq" } },
+        { "name": "Contact", "request": { "method": "POST", "url": "{{baseUrl}}/api/v1/contact" } },
+        { "name": "Contact Submit", "request": { "method": "POST", "url": "{{baseUrl}}/api/v1/contact/submit" } },
+        { "name": "User Key Store", "request": { "method": "POST", "url": "{{baseUrl}}/api/v1/user" } },
+        { "name": "App Key Store", "request": { "method": "POST", "url": "{{baseUrl}}/api/v1/app" } },
+        { "name": "Replay Start", "request": { "method": "POST", "url": "{{baseUrl}}/api/v1/replay/start" } },
+        { "name": "Replay Append", "request": { "method": "POST", "url": "{{baseUrl}}/api/v1/replay/append" } },
+        { "name": "Meta Page", "request": { "method": "POST", "url": "{{baseUrl}}/api/v1/meta/pages/{{page}}" } }
+      ]
+    },
+    {
+      "name": "Admin Auth",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"email\": \"admin1@example.com\",\n  \"password\": \"password123\"\n}" },
+            "url": "{{baseUrl}}/api/v1/admin/auth/login"
+          }
+        },
+        {
+          "name": "Me",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }],
+            "url": "{{baseUrl}}/api/v1/admin/auth/me"
+          }
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }],
+            "url": "{{baseUrl}}/api/v1/admin/auth/logout"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "item": [
+        { "name": "Update Full Name", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/site/configurations/update/full-name" } },
+        { "name": "Update Contact Info", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/site/configurations/update/contact-information" } },
+        { "name": "Add Social Link", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/site/configurations/add/social-links" } },
+        { "name": "Update Social Link", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/site/configurations/update/social-links" } },
+        { "name": "Delete Social Link", "request": { "method": "DELETE", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/site/configurations/delete/social-links" } },
+        { "name": "Order Social Links", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/site/configurations/order/social-links" } },
+        { "name": "Theme Palette Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/site/configurations/theme-palette/update" } },
+        { "name": "Theme Palette Restore Default", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/site/configurations/theme-palette/restore-default" } },
+        { "name": "Theme Palette Create", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/site/configurations/theme-palette/create" } },
+        { "name": "Theme Palette Activate", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/site/configurations/theme-palette/activate" } },
+        { "name": "Event Theme Toggle", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/site/configurations/event-theme/toggle" } },
+        { "name": "Maintenance Mode Toggle", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/site/configurations/maintenance-mode/toggle" } },
+        { "name": "Home Hero Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/home/hero/update" } },
+        { "name": "Home Featured Projects Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/home/featured-projects/update" } },
+        { "name": "Home Featured Projects Delete", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/home/featured-projects/delete" } },
+        { "name": "About Hero Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/about/hero/update" } },
+        { "name": "About Stats Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/about/stats/update" } },
+        { "name": "About Introduction Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/about/introduction/update" } },
+        { "name": "About Services Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/about/services/update" } },
+        { "name": "About Work Process Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/about/work-process/update" } },
+        { "name": "About Values Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/about/values/update" } },
+        { "name": "Services Hero Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/services/hero/update" } },
+        { "name": "Services Items Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/services/items/update" } },
+        { "name": "Why Choose Me Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/services/why-choose-me/update" } },
+        { "name": "Deliverables Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/services/deliverables/update" } },
+        { "name": "Projects Hero Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/projects/hero/update" } },
+        { "name": "Project Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/projects/items/update" } },
+        { "name": "Project Delete", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/projects/items/delete" } },
+        { "name": "Skills Hero Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/skills/hero/update" } },
+        { "name": "Skills Social Links Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/skills/social-links/update" } },
+        { "name": "Skills Categories Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/skills/categories/update" } },
+        { "name": "Skills Learning Focus Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/skills/learning-focus/update" } },
+        { "name": "Blog Hero Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/blog/hero/update" } },
+        { "name": "Blog Author Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/blog/author/update" } },
+        { "name": "Blog Post Add", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/blog/posts/add" } },
+        { "name": "Blog Post Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/blog/posts/update" } },
+        { "name": "Blog Post Delete", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/blog/posts/delete" } },
+        { "name": "FAQ Hero Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/faq/hero/update" } },
+        { "name": "FAQ Items Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/faq/items/update" } },
+        { "name": "Contact Hero Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/contact/hero/update" } },
+        { "name": "Contact Infos Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/contact/infos/update" } },
+        { "name": "Contact Social Links Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/contact/social-links/update" } },
+        { "name": "Contact Submissions", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/contact/submissions" } },
+        { "name": "Contact Submission Mark Read", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/contact/submissions/mark-read" } },
+        { "name": "Cache Clear", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/cache/clear" } },
+        { "name": "Cache Refresh", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/cache/refresh" } },
+        { "name": "Meta Page Update", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/meta/pages/{{page}}/update" } },
+        { "name": "Replay Sessions", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/replay/sessions" } },
+        { "name": "Replay Session", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/replay/session/{{sessionId}}" } },
+        { "name": "Replay Session Delete", "request": { "method": "DELETE", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/replay/session/{{sessionId}}" } },
+        { "name": "User Keys", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/keys/users" } },
+        { "name": "User Key Update", "request": { "method": "PUT", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/keys/users/{{id}}" } },
+        { "name": "User Key Delete", "request": { "method": "DELETE", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/keys/users/{{id}}" } },
+        { "name": "App Keys", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/keys/apps" } },
+        { "name": "App Key Update", "request": { "method": "PUT", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/keys/apps/{{id}}" } },
+        { "name": "App Key Delete", "request": { "method": "DELETE", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/api/v1/keys/apps/{{id}}" } }
+      ]
+    }
+  ]
+}
