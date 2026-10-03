@@ -22,12 +22,13 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        // Seed themes, theme palette, icons, and admins
+        // Seed themes, theme palette, icons, admins, and yassmine data
         $this->call([
             ThemeSeeder::class,
             ThemePaletteSeeder::class,
             IconSeeder::class,
             AdminSeeder::class,
+            YassmineSeeder::class,
         ]);
     }
 }

@@ -11,8 +11,8 @@ chown www-data:www-data /var/www/database/database.sqlite
 # Run migrations (Force is needed in production to avoid prompts)
 php artisan migrate --force
 
-# Seed the Admin accounts
-php artisan db:seed --class=AdminSeeder --force
+# Seed the database
+php artisan db:seed --force
 
 # Start PHP-FPM in background
 php-fpm -D
