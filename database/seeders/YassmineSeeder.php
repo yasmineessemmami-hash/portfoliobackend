@@ -24,7 +24,7 @@ class YassmineSeeder extends Seeder
         // Settings
         $setting = SiteSetting::first() ?? new SiteSetting();
         $setting->full_name = 'Yassmine Es-Semmami';
-        $setting->contact_email = 'yassmine@example.com';
+        $setting->contact_email = 'yasmineessemmami@gmail.com';
         $setting->save();
 
         // HomeHero

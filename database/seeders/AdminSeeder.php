@@ -18,10 +18,10 @@ class AdminSeeder extends Seeder
 
         // Create first admin
         Admin::updateOrCreate(
-            ['email' => 'admin1@example.com'],
+            ['email' => 'yasmineessemmami@gmail.com'],
             [
-                'name' => 'Admin One',
-                'email' => 'admin1@example.com',
+                'name' => 'Yasmine',
+                'email' => 'yasmineessemmami@gmail.com',
                 'password' => Hash::make('password123'),
             ]
         );
