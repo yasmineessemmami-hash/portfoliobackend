@@ -15,6 +15,7 @@ php artisan migrate --force
 php artisan db:seed --force
 
 # Start PHP-FPM in background
+php artisan storage:link
 php-fpm -D
 
 # Start Nginx in foreground

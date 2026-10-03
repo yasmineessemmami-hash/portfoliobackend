@@ -200,8 +200,8 @@ class YassmineSeeder extends Seeder
             Project::create([
                 'title' => 'Modular E-Learning Platform with Granular License Management',
                 'description' => 'A modular e-learning platform designed to manage online learning content and granular access licenses.',
-                'image' => '',
-                'image_type' => 'url',
+                'image' => 'uploads/projects/project_1790203556_7100.png',
+                'image_type' => 'upload',
                 'key' => 'elearning',
                 'tech_stack' => ['Laravel', 'React', 'SQL'],
                 'github_url' => '',
@@ -212,8 +212,8 @@ class YassmineSeeder extends Seeder
             Project::create([
                 'title' => 'Management Consulting Web Platform',
                 'description' => 'A web platform designed for a management consulting company to support digital management and business activities. Developed during the internship at Next Challenge, Casablanca.',
-                'image' => '',
-                'image_type' => 'url',
+                'image' => 'uploads/projects/project_1790203558_5601.png',
+                'image_type' => 'upload',
                 'key' => 'consulting',
                 'tech_stack' => ['Laravel', 'React', 'SQL'],
                 'github_url' => '',
@@ -224,8 +224,8 @@ class YassmineSeeder extends Seeder
             Project::create([
                 'title' => 'Workbridge — Coworking Space Management System',
                 'description' => 'A coworking space management system developed to support space booking, event participation, and package purchases.',
-                'image' => '',
-                'image_type' => 'url',
+                'image' => 'uploads/projects/project_1790203560_4887.png',
+                'image_type' => 'upload',
                 'key' => 'workbridge',
                 'tech_stack' => ['HTML', 'CSS', 'JavaScript', 'PHP', 'SQL'],
                 'github_url' => '',
@@ -236,8 +236,8 @@ class YassmineSeeder extends Seeder
             Project::create([
                 'title' => 'Coffee Shop Website',
                 'description' => 'A simple web website developed for a coffee shop.',
-                'image' => '',
-                'image_type' => 'url',
+                'image' => 'uploads/projects/project_1790203562_6221.png',
+                'image_type' => 'upload',
                 'key' => 'coffeeshop',
                 'tech_stack' => ['HTML', 'CSS', 'JavaScript'],
                 'github_url' => '',
@@ -248,8 +248,8 @@ class YassmineSeeder extends Seeder
             Project::create([
                 'title' => 'Library Management Application',
                 'description' => 'A library management application developed as part of academic work.',
-                'image' => '',
-                'image_type' => 'url',
+                'image' => 'uploads/projects/project_1790203564_2953.png',
+                'image_type' => 'upload',
                 'key' => 'library',
                 'tech_stack' => ['VB.NET'],
                 'github_url' => '',
@@ -260,8 +260,8 @@ class YassmineSeeder extends Seeder
             Project::create([
                 'title' => 'Web Applications & Academic Projects',
                 'description' => 'Various static and dynamic web applications developed during academic projects.',
-                'image' => '',
-                'image_type' => 'url',
+                'image' => 'uploads/projects/project_1790203565_1252.png',
+                'image_type' => 'upload',
                 'key' => 'academic',
                 'tech_stack' => ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL', 'React'],
                 'github_url' => '',
@@ -543,7 +543,7 @@ class YassmineSeeder extends Seeder
         if (\App\Models\BlogAuthor::count() == 0) {
             $author = \App\Models\BlogAuthor::create([
                 'name' => 'Yassmine Es-Semmami',
-                'avatar' => '',
+                'avatar' => 'uploads/about/avatar_1790203798.jpeg',
                 'bio' => 'Computer Engineering Student & Full-Stack Developer based in Marrakech, Morocco.',
                 'social_links' => [
                     ['label' => 'GitHub', 'url' => 'https://github.com/yasmineessemmami-hash', 'icon_key' => 'lucide-github']
@@ -561,7 +561,7 @@ class YassmineSeeder extends Seeder
                 'content' => [
                     ['type' => 'paragraph', 'content' => 'Building modern web applications often requires a robust backend and a dynamic frontend. Combining Laravel and React is one of the most popular full-stack choices.']
                 ],
-                'image' => '',
+                'image' => 'uploads/blog/blog_1790204428_8878.png',
                 'media_type' => 'image',
                 'category' => 'Web Development',
                 'tags' => ['Laravel', 'React', 'Full-Stack'],
@@ -576,7 +576,7 @@ class YassmineSeeder extends Seeder
                 'content' => [
                     ['type' => 'paragraph', 'content' => 'Studying Computer Engineering has given me a deep understanding of how software and hardware interact, building a strong foundation for my career as a developer.']
                 ],
-                'image' => '',
+                'image' => 'uploads/blog/blog_1790204584_7906.png',
                 'media_type' => 'image',
                 'category' => 'Education',
                 'tags' => ['Computer Engineering', 'Student Life', 'Career'],
