@@ -54,9 +54,6 @@ class ContactFormSubmissionMail extends Mailable
 
         return new Envelope(
             subject: $subject,
-            replyTo: [
-                new \Illuminate\Mail\Mailables\Address($this->submission->email, $this->submission->name),
-            ],
         );
     }
 
